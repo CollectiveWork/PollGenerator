@@ -1,4 +1,11 @@
 PollGenerator::Application.routes.draw do
+  resources :pollers
+
+  resources :languages
+  resources :answers
+  resources :questions
+
+  root :to => 'questions#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

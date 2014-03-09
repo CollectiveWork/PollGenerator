@@ -1,0 +1,28 @@
+
+
+ <div class="panel panel-default">
+
+<div class="row">
+<% @answers.each do |answer| %>
+  
+<div class="col-xs-6 col-md-4">
+ 
+  <div class="panel-heading">
+    <h3 class="panel-title text-center"> <%= answer.first.text @count+= 1 %> 
+
+    </h3>
+  </div>
+  <div class="panel-body text-center">
+    <%= link_to "Vote", pollers_path(:answer_id => answer.first.answer_id), :method => :post  %> 
+
+  </div>
+
+  
+  
+  
+  
+  </div>
+
+<% end %>
+</div>
+</div>
