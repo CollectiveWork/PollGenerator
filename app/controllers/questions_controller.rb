@@ -47,7 +47,7 @@ class QuestionsController < ApplicationController
 
     def set_question
       begin
-        @count = 0
+       
         @question = Question.find(get_question_id)
 
         unless cookies.has_key? :saw
