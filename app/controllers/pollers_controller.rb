@@ -17,6 +17,12 @@ class PollersController < ApplicationController
     answer.count += 1
     answer.save
 
+    poller = Poller.new
+    poller.ip = request.remote_ip
+    poller.location = cookies[:location]
+    poller.answer_id = params[:answer_id]
+    poller.save
+
     cookies[:voted] = "true"
     redirect_to root_path
   end

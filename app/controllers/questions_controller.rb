@@ -56,8 +56,8 @@ class QuestionsController < ApplicationController
           @question.save
         end
       
-        @text = @question.question_languages.where(language_name: cookies[:location])
-        @answers = @question.answers.map {|answer| answer.answer_languages.where(language_name: cookies[:location]) }
+        @text = @question.question_languages.where(language_name: cookies[:language])
+        @answers = @question.answers.map {|answer| answer.answer_languages.where(language_name: cookies[:language]) }
       rescue
         redirect_to root_path
       end
